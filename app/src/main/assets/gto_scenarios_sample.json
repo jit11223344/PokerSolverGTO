@@ -1,0 +1,39 @@
+[
+  {
+    "scenario_id": "BTN_vs_BB_100bb_Kh9s4c",
+    "position": "BTN",
+    "villain_position": "BB",
+    "stack_depth": 100,
+    "board": ["Kh", "9s", "4c"],
+    "action_history": ["BB_check"],
+    "hero_range": "22+, A2s+, K9s+, QTs+, JTs, ATo+, KTo+",
+    "gto_strategy": {
+      "bet_66%": 0.45,
+      "bet_33%": 0.30,
+      "check": 0.25
+    },
+    "range_breakdown": {
+      "bet_66%": ["AA-TT", "AK", "KQ"],
+      "bet_33%": ["99-22", "AQ", "KJs"],
+      "check": ["A2s-A5s", "small pairs"]
+    }
+  },
+  {
+    "scenario_id": "CO_vs_BB_100bb_Qd7d2c",
+    "position": "CO",
+    "villain_position": "BB",
+    "stack_depth": 100,
+    "board": ["Qd", "7d", "2c"],
+    "action_history": ["BB_check"],
+    "hero_range": "22+, A2s+, KTs+, QTs+, JTs, AJo+",
+    "gto_strategy": {
+      "bet_33%": 0.55,
+      "check": 0.45
+    },
+    "range_breakdown": {
+      "bet_33%": ["QQ-99", "AQ", "AdJd"],
+      "check": ["A2s-A5s", "KdJd", "small pairs"]
+    }
+  }
+]
+

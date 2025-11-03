@@ -11,28 +11,12 @@ import com.example.pokersolverGTO.ui.screens.TrainerScreen
 import com.example.pokersolverGTO.ui.screens.exercises.*
 import com.example.pokersolverGTO.ui.screens.PokerTableScreen
 import com.example.pokersolverGTO.ui.screens.GTOScenarioScreen
+import com.example.pokersolverGTO.ui.screens.EquityCalculatorScreen
+import com.example.pokersolverGTO.ui.screens.SettingsScreen
 import com.example.pokersolverGTO.trainer.models.TrainingMode
 import com.example.pokersolverGTO.trainer.ui.TrainerHomeScreen
 import com.example.pokersolverGTO.trainer.ui.PokerTrainingTableScreen
 import com.example.pokersolverGTO.trainer.ui.StatsDetailScreen
-
-sealed class Screen(val route: String) {
-    object Trainer : Screen("trainer")
-    object Preflop : Screen("preflop")
-    object Postflop : Screen("postflop")
-    object HandRanking : Screen("hand_ranking")
-    object BestHand : Screen("best_hand")
-    object PotOdds : Screen("pot_odds")
-    object Table : Screen("poker_table")
-    object GTOScenario : Screen("gto_scenario")
-
-    // New Trainer Pro screens
-    object TrainerHome : Screen("trainer_home")
-    object TrainerMode : Screen("trainer_mode/{mode}") {
-        fun createRoute(mode: TrainingMode) = "trainer_mode/${mode.name}"
-    }
-    object StatsDetail : Screen("stats_detail")
-}
 
 @Composable
 fun NavGraph(navController: NavHostController = rememberNavController()) {
@@ -61,6 +45,12 @@ fun NavGraph(navController: NavHostController = rememberNavController()) {
         }
         composable(Screen.GTOScenario.route) {
             GTOScenarioScreen(onBackPressed = { navController.popBackStack() })
+        }
+        composable(Screen.EquityCalculator.route) {
+            EquityCalculatorScreen(onBackPressed = { navController.popBackStack() })
+        }
+        composable(Screen.Settings.route) {
+            SettingsScreen(onBackPressed = { navController.popBackStack() })
         }
 
         // New Trainer Pro screens
